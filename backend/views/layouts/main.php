@@ -26,16 +26,15 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+<?=\backend\widgets\Header::widget() ?>
 
 
+<?=\backend\widgets\Sidebar::widget() ?>
 
-<div class="wrapper">
-    <?=\backend\widgets\Header::widget() ?>
+<div class="content-page"
+
         <?= $content ?>
-    <?=\backend\widgets\Sidebar::widget() ?>
 
-
-</div>
 <?php $this->endBody() ?>
 </body>
 </html>

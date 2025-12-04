@@ -24,27 +24,47 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'tableOptions' => ['class' => 'row justify-content-center'],
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'tableOptions' => ['class' => 'table table-bordered table-striped'],
 
-            'id',
-            'title_uz',
-            'title_ru',
-            'description_uz:ntext',
-            'description_ru:ntext',
-            //'created_at',
-            //'updated_at',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, AboutCompany $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+            'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
+
+                    'id',
+                    'title_uz',
+                    'title_ru',
+                    'description_uz:ntext',
+                    'description_ru:ntext',
+
+                    [
+                            'class' => ActionColumn::class,
+                            'template' => '{update} {delete}',
+                            'buttons' => [
+                                    'update' => function ($url, $model) {
+                                        return Html::a('Edit', $url, [
+                                                'class' => 'btn btn-sm btn-outline-primary',
+                                        ]);
+                                    },
+                                    'delete' => function ($url, $model) {
+                                        return Html::a('Delete', $url, [
+                                                'class' => 'btn btn-sm btn-outline-danger',
+                                                'data' => [
+                                                        'confirm' => 'Are you sure you want to delete?',
+                                                        'method' => 'post',
+                                                ],
+                                        ]);
+                                    },
+                            ],
+                            'contentOptions' => ['style' => 'white-space:nowrap;'],
+                            'urlCreator' => function ($action, $model) {
+                                return Url::to([$action, 'id' => $model->id]);
+                            },
+                    ],
+
             ],
-        ],
     ]); ?>
+
 
 
 </div>

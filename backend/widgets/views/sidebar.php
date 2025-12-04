@@ -1377,3 +1377,43 @@
         </div>
     </div>
 </div>
+<script>
+    // Note: If you do not want any of this logic here, you can remove it. It's already in app.js. This is for removing delays.
+
+    // Sidenav Icons
+    lucide.createIcons();
+
+    // Sidenav Link Activation
+    const currentUrlT = window.location.href.split(/[?#]/)[0];
+    const currentPageT = window.location.pathname.split("https://coderthemes.com/").pop();
+    const sideNavT = document.querySelector('.side-nav');
+
+    document.querySelectorAll('.side-nav-link[href]').forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (!linkHref) return;
+
+        const match = linkHref === currentPageT || link.href === currentUrlT;
+
+        if (match) {
+            // Mark link and its li active
+            link.classList.add('active');
+            const li = link.closest('li.side-nav-item');
+            if (li) li.classList.add('active');
+
+            // Expand all parent .collapse and set toggles
+            let parentCollapse = link.closest('.collapse');
+            while (parentCollapse) {
+                parentCollapse.classList.add('show');
+
+                const parentToggle = document.querySelector(`a[href="#${parentCollapse.id}"]`);
+                if (parentToggle) {
+                    parentToggle.setAttribute('aria-expanded', 'true');
+                    const parentLi = parentToggle.closest('li.side-nav-item');
+                    if (parentLi) parentLi.classList.add('active');
+                }
+
+                parentCollapse = parentCollapse.parentElement.closest('.collapse');
+            }
+        }
+    });
+</script>
