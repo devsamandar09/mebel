@@ -29,13 +29,13 @@ AppAsset::register($this);
 
 
 
-<?=\backend\widgets\Sidebar::widget() ?>
-<main class="dashboard-main">
+<div class="wrapper">
     <?=\backend\widgets\Header::widget() ?>
         <?= $content ?>
+    <?=\backend\widgets\Sidebar::widget() ?>
 
 
-</main>
+</div>
 <?php $this->endBody() ?>
 </body>
 </html>

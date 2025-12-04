@@ -1,344 +1,603 @@
-<div class="navbar-header">
-    <div class="row align-items-center justify-content-between">
-        <div class="col-auto">
-            <div class="d-flex flex-wrap align-items-center gap-4">
-                <button type="button" class="sidebar-toggle">
-                    <iconify-icon icon="heroicons:bars-3-solid" class="icon text-2xl non-active"></iconify-icon>
-                    <iconify-icon icon="iconoir:arrow-right" class="icon text-2xl active"></iconify-icon>
-                </button>
-                <button type="button" class="sidebar-mobile-toggle">
-                    <iconify-icon icon="heroicons:bars-3-solid" class="icon"></iconify-icon>
-                </button>
-                <form class="navbar-search">
-                    <input type="text" name="search" placeholder="Search">
-                    <iconify-icon icon="ion:search-outline" class="icon"></iconify-icon>
-                </form>
+<!-- Topbar Start -->
+<header class="app-topbar">
+    <div class="container-fluid topbar-menu">
+        <div class="d-flex align-items-center justify-content-center gap-2">
+            <!-- Topbar Brand Logo -->
+            <div class="logo-topbar">
+                <a href="index.html" class="logo-dark">
+                            <span class="d-flex align-items-center gap-1">
+                                <span class="avatar avatar-xs rounded-circle text-bg-dark">
+                                    <span class="avatar-title">
+                                        <i data-lucide="sparkles" class="fs-md"></i>
+                                    </span>
+                                </span>
+                                <span class="logo-text text-body fw-bold fs-xl">Vona</span>
+                            </span>
+                </a>
+                <a href="index.html" class="logo-light">
+                            <span class="d-flex align-items-center gap-1">
+                                <span class="avatar avatar-xs rounded-circle text-bg-dark">
+                                    <span class="avatar-title">
+                                        <i data-lucide="sparkles" class="fs-md"></i>
+                                    </span>
+                                </span>
+                                <span class="logo-text text-white fw-bold fs-xl">Vona</span>
+                            </span>
+                </a>
             </div>
-        </div>
-        <div class="col-auto">
-            <div class="d-flex flex-wrap align-items-center gap-3">
-                <button type="button" data-theme-toggle class="w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center"></button>
-                <div class="dropdown d-none d-sm-inline-block">
-                    <button class="has-indicator w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center" type="button" data-bs-toggle="dropdown">
-                        <img src="/images/lang-flag.png" alt="image" class="w-24 h-24 object-fit-cover rounded-circle">
-                    </button>
-                    <div class="dropdown-menu to-top dropdown-menu-sm">
-                        <div class="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
-                            <div>
-                                <h6 class="text-lg text-primary-light fw-semibold mb-0">Choose Your Language</h6>
-                            </div>
-                        </div>
 
-                        <div class="max-h-400-px overflow-y-auto scroll-sm pe-8">
-                            <div class="form-check style-check d-flex align-items-center justify-content-between mb-16">
-                                <label class="form-check-label line-height-1 fw-medium text-secondary-light" for="english">
-                  <span class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                    <img src="/images/flags/flag1.png" alt="" class="w-36-px h-36-px bg-success-subtle text-success-main rounded-circle flex-shrink-0">
-                    <span class="text-md fw-semibold mb-0">English</span>
-                  </span>
-                                </label>
-                                <input class="form-check-input" type="radio" name="crypto" id="english">
-                            </div>
+            <div class="d-lg-none d-flex mx-1">
+                <a href="index.html">
+                    <img src="/images/logo-sm.png" height="28" alt="Logo">
+                </a>
+            </div>
 
-                            <div class="form-check style-check d-flex align-items-center justify-content-between mb-16">
-                                <label class="form-check-label line-height-1 fw-medium text-secondary-light" for="japan">
-                  <span class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                    <img src="/images/flags/flag2.png" alt="" class="w-36-px h-36-px bg-success-subtle text-success-main rounded-circle flex-shrink-0">
-                    <span class="text-md fw-semibold mb-0">Japan</span>
-                  </span>
-                                </label>
-                                <input class="form-check-input" type="radio" name="crypto" id="japan">
-                            </div>
+            <!-- Sidebar Hover Menu Toggle Button -->
+            <button class="button-collapse-toggle d-xl-none">
+                <i data-lucide="menu" class="fs-22 align-middle"></i>
+            </button>
 
-                            <div class="form-check style-check d-flex align-items-center justify-content-between mb-16">
-                                <label class="form-check-label line-height-1 fw-medium text-secondary-light" for="france">
-                  <span class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                    <img src="/images/flags/flag3.png" alt="" class="w-36-px h-36-px bg-success-subtle text-success-main rounded-circle flex-shrink-0">
-                    <span class="text-md fw-semibold mb-0">France</span>
-                  </span>
-                                </label>
-                                <input class="form-check-input" type="radio" name="crypto" id="france">
-                            </div>
+            <!-- Topbar Link Item -->
+            <div class="topbar-item d-none d-lg-flex">
+                <a href="#!" class="topbar-link btn shadow-none btn-link px-2 disabled"> v1.0.0</a>
+            </div>
 
-                            <div class="form-check style-check d-flex align-items-center justify-content-between mb-16">
-                                <label class="form-check-label line-height-1 fw-medium text-secondary-light" for="germany">
-                  <span class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                    <img src="/images/flags/flag4.png" alt="" class="w-36-px h-36-px bg-success-subtle text-success-main rounded-circle flex-shrink-0">
-                    <span class="text-md fw-semibold mb-0">Germany</span>
-                  </span>
-                                </label>
-                                <input class="form-check-input" type="radio" name="crypto" id="germany">
-                            </div>
+            <!-- Topbar Link Item -->
+            <div class="topbar-item d-none d-lg-flex">
+                <a href="#!" class="topbar-link btn shadow-none btn-link px-2"> Components</a>
+            </div>
 
-                            <div class="form-check style-check d-flex align-items-center justify-content-between mb-16">
-                                <label class="form-check-label line-height-1 fw-medium text-secondary-light" for="korea">
-                  <span class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                    <img src="/images/flags/flag5.png" alt="" class="w-36-px h-36-px bg-success-subtle text-success-main rounded-circle flex-shrink-0">
-                    <span class="text-md fw-semibold mb-0">South Korea</span>
-                  </span>
-                                </label>
-                                <input class="form-check-input" type="radio" name="crypto" id="korea">
-                            </div>
-
-                            <div class="form-check style-check d-flex align-items-center justify-content-between mb-16">
-                                <label class="form-check-label line-height-1 fw-medium text-secondary-light" for="bangladesh">
-                  <span class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                    <img src="/images/flags/flag6.png" alt="" class="w-36-px h-36-px bg-success-subtle text-success-main rounded-circle flex-shrink-0">
-                    <span class="text-md fw-semibold mb-0">Bangladesh</span>
-                  </span>
-                                </label>
-                                <input class="form-check-input" type="radio" name="crypto" id="bangladesh">
-                            </div>
-
-                            <div class="form-check style-check d-flex align-items-center justify-content-between mb-16">
-                                <label class="form-check-label line-height-1 fw-medium text-secondary-light" for="india">
-                  <span class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                    <img src="/images/flags/flag7.png" alt="" class="w-36-px h-36-px bg-success-subtle text-success-main rounded-circle flex-shrink-0">
-                    <span class="text-md fw-semibold mb-0">India</span>
-                  </span>
-                                </label>
-                                <input class="form-check-input" type="radio" name="crypto" id="india">
-                            </div>
-                            <div class="form-check style-check d-flex align-items-center justify-content-between">
-                                <label class="form-check-label line-height-1 fw-medium text-secondary-light" for="canada">
-                  <span class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                    <img src="/images/flags/flag8.png" alt="" class="w-36-px h-36-px bg-success-subtle text-success-main rounded-circle flex-shrink-0">
-                    <span class="text-md fw-semibold mb-0">Canada</span>
-                  </span>
-                                </label>
-                                <input class="form-check-input" type="radio" name="crypto" id="canada">
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Language dropdown end -->
-
+            <!-- Dropdown -->
+            <div class="topbar-item">
                 <div class="dropdown">
-                    <button class="has-indicator w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center" type="button" data-bs-toggle="dropdown">
-                        <iconify-icon icon="mage:email" class="text-primary-light text-xl"></iconify-icon>
-                    </button>
-                    <div class="dropdown-menu to-top dropdown-menu-lg p-0">
-                        <div class="m-16 py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
-                            <div>
-                                <h6 class="text-lg text-primary-light fw-semibold mb-0">Message</h6>
-                            </div>
-                            <span class="text-primary-600 fw-semibold text-lg w-40-px h-40-px rounded-circle bg-base d-flex justify-content-center align-items-center">05</span>
-                        </div>
+                    <a href="#!" class="topbar-link btn shadow-none btn-link dropdown-toggle drop-arrow-none px-2"
+                       data-bs-toggle="dropdown" data-bs-offset="0,13">
+                        Dropdown <i class="ti ti-chevron-down ms-1"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#!">
+                            <i class="ti ti-user-plus fs-15 me-1"></i> Add Project Member
+                        </a>
+                        <a class="dropdown-item" href="#!">
+                            <i class="ti ti-activity fs-15 me-1"></i> View Activity
+                        </a>
+                        <a class="dropdown-item" href="#!">
+                            <i class="ti ti-settings fs-15 me-1"></i> Settings
+                        </a>
+                    </div> <!-- end dropdown-menu-->
+                </div> <!-- end dropdown-->
+            </div> <!-- end topbar item-->
 
-                        <div class="max-h-400-px overflow-y-auto scroll-sm pe-4">
-
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
-                                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                <span class="w-40-px h-40-px rounded-circle flex-shrink-0 position-relative">
-                  <img src="/images/notification/profile-3.png" alt="">
-                  <span class="w-8-px h-8-px bg-success-main rounded-circle position-absolute end-0 bottom-0"></span>
-                </span>
-                                    <div>
-                                        <h6 class="text-md fw-semibold mb-4">Kathryn Murphy</h6>
-                                        <p class="mb-0 text-sm text-secondary-light text-w-100-px">hey! there i’m...</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-column align-items-end">
-                                    <span class="text-sm text-secondary-light flex-shrink-0">12:30 PM</span>
-                                    <span class="mt-4 text-xs text-base w-16-px h-16-px d-flex justify-content-center align-items-center bg-warning-main rounded-circle">8</span>
-                                </div>
-                            </a>
-
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
-                                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                <span class="w-40-px h-40-px rounded-circle flex-shrink-0 position-relative">
-                  <img src="/images/notification/profile-4.png" alt="">
-                  <span class="w-8-px h-8-px  bg-neutral-300 rounded-circle position-absolute end-0 bottom-0"></span>
-                </span>
-                                    <div>
-                                        <h6 class="text-md fw-semibold mb-4">Kathryn Murphy</h6>
-                                        <p class="mb-0 text-sm text-secondary-light text-w-100-px">hey! there i’m...</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-column align-items-end">
-                                    <span class="text-sm text-secondary-light flex-shrink-0">12:30 PM</span>
-                                    <span class="mt-4 text-xs text-base w-16-px h-16-px d-flex justify-content-center align-items-center bg-warning-main rounded-circle">2</span>
-                                </div>
-                            </a>
-
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between bg-neutral-50">
-                                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                <span class="w-40-px h-40-px rounded-circle flex-shrink-0 position-relative">
-                  <img src="/images/notification/profile-5.png" alt="">
-                  <span class="w-8-px h-8-px bg-success-main rounded-circle position-absolute end-0 bottom-0"></span>
-                </span>
-                                    <div>
-                                        <h6 class="text-md fw-semibold mb-4">Kathryn Murphy</h6>
-                                        <p class="mb-0 text-sm text-secondary-light text-w-100-px">hey! there i’m...</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-column align-items-end">
-                                    <span class="text-sm text-secondary-light flex-shrink-0">12:30 PM</span>
-                                    <span class="mt-4 text-xs text-base w-16-px h-16-px d-flex justify-content-center align-items-center bg-neutral-400 rounded-circle">0</span>
-                                </div>
-                            </a>
-
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between bg-neutral-50">
-                                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                <span class="w-40-px h-40-px rounded-circle flex-shrink-0 position-relative">
-                  <img src="/images/notification/profile-6.png" alt="">
-                  <span class="w-8-px h-8-px bg-neutral-300 rounded-circle position-absolute end-0 bottom-0"></span>
-                </span>
-                                    <div>
-                                        <h6 class="text-md fw-semibold mb-4">Kathryn Murphy</h6>
-                                        <p class="mb-0 text-sm text-secondary-light text-w-100-px">hey! there i’m...</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-column align-items-end">
-                                    <span class="text-sm text-secondary-light flex-shrink-0">12:30 PM</span>
-                                    <span class="mt-4 text-xs text-base w-16-px h-16-px d-flex justify-content-center align-items-center bg-neutral-400 rounded-circle">0</span>
-                                </div>
-                            </a>
-
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
-                                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                <span class="w-40-px h-40-px rounded-circle flex-shrink-0 position-relative">
-                  <img src="/images/notification/profile-7.png" alt="">
-                  <span class="w-8-px h-8-px bg-success-main rounded-circle position-absolute end-0 bottom-0"></span>
-                </span>
-                                    <div>
-                                        <h6 class="text-md fw-semibold mb-4">Kathryn Murphy</h6>
-                                        <p class="mb-0 text-sm text-secondary-light text-w-100-px">hey! there i’m...</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-column align-items-end">
-                                    <span class="text-sm text-secondary-light flex-shrink-0">12:30 PM</span>
-                                    <span class="mt-4 text-xs text-base w-16-px h-16-px d-flex justify-content-center align-items-center bg-warning-main rounded-circle">8</span>
-                                </div>
-                            </a>
-
-                        </div>
-                        <div class="text-center py-12 px-16">
-                            <a href="javascript:void(0)" class="text-primary-600 fw-semibold text-md">See All Message</a>
-                        </div>
-                    </div>
-                </div><!-- Message dropdown end -->
-
+            <!-- Mega Menu Dropdown -->
+            <div class="topbar-item d-none d-md-flex">
                 <div class="dropdown">
-                    <button class="has-indicator w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center" type="button" data-bs-toggle="dropdown">
-                        <iconify-icon icon="iconoir:bell" class="text-primary-light text-xl"></iconify-icon>
+                    <button class="topbar-link btn shadow-none btn-link px-2 dropdown-toggle drop-arrow-none"
+                            data-bs-toggle="dropdown" data-bs-offset="0,13" type="button" aria-haspopup="false"
+                            aria-expanded="false">
+                        Mega Menu <i class="ti ti-chevron-down ms-1"></i>
                     </button>
-                    <div class="dropdown-menu to-top dropdown-menu-lg p-0">
-                        <div class="m-16 py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
-                            <div>
-                                <h6 class="text-lg text-primary-light fw-semibold mb-0">Notifications</h6>
-                            </div>
-                            <span class="text-primary-600 fw-semibold text-lg w-40-px h-40-px rounded-circle bg-base d-flex justify-content-center align-items-center">05</span>
-                        </div>
-
-                        <div class="max-h-400-px overflow-y-auto scroll-sm pe-4">
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
-                                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                <span class="w-44-px h-44-px bg-success-subtle text-success-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
-                  <iconify-icon icon="bitcoin-icons:verify-outline" class="icon text-xxl"></iconify-icon>
-                </span>
-                                    <div>
-                                        <h6 class="text-md fw-semibold mb-4">Congratulations</h6>
-                                        <p class="mb-0 text-sm text-secondary-light text-w-200-px">Your profile has been Verified. Your profile has been Verified</p>
+                    <div class="dropdown-menu dropdown-menu-xxl p-0">
+                        <div class="h-100" style="max-height: 380px;" data-simplebar>
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h5 class="fw-semibold fs-sm dropdown-header">Workspace Tools</h5>
+                                        <ul class="list-unstyled">
+                                            <li><a href="javascript:void(0);" class="dropdown-item">My Dashboard</a>
+                                            </li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Recent Activity</a>
+                                            </li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Notifications
+                                                    Center</a></li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">File Manager</a>
+                                            </li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Calendar View</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
-                            </a>
 
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between bg-neutral-50">
-                                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                <span class="w-44-px h-44-px bg-success-subtle text-success-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
-                  <img src="/images/notification/profile-1.png" alt="">
-                </span>
-                                    <div>
-                                        <h6 class="text-md fw-semibold mb-4">Ronald Richards</h6>
-                                        <p class="mb-0 text-sm text-secondary-light text-w-200-px">You can stitch between artboards</p>
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h5 class="fw-semibold fs-sm dropdown-header">Team Operations</h5>
+                                        <ul class="list-unstyled">
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Team Overview</a>
+                                            </li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Meeting Schedule</a>
+                                            </li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Timesheets</a></li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Feedback Hub</a>
+                                            </li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Resource
+                                                    Allocation</a></li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
-                            </a>
 
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
-                                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                <span class="w-44-px h-44-px bg-info-subtle text-info-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
-                  AM
-                </span>
-                                    <div>
-                                        <h6 class="text-md fw-semibold mb-4">Arlene McCoy</h6>
-                                        <p class="mb-0 text-sm text-secondary-light text-w-200-px">Invite you to prototyping</p>
-                                    </div>
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h5 class="fw-semibold fs-sm dropdown-header">Account Settings</h5>
+                                        <ul class="list-unstyled">
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Profile Settings</a>
+                                            </li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Billing & Plans</a>
+                                            </li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Integrations</a>
+                                            </li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Privacy &
+                                                    Security</a></li>
+                                            <li><a href="javascript:void(0);" class="dropdown-item">Support Center</a>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- end dropdown-->
+                                </div> <!-- end col-->
+                            </div> <!-- end row-->
+                        </div> <!-- end .h-100-->
+                    </div> <!-- .dropdown-menu-->
+                </div> <!-- .dropdown-->
+            </div> <!-- end topbar-item -->
+        </div> <!-- .d-flex-->
+
+        <div class="d-flex align-items-center gap-2">
+            <!-- Search -->
+            <div class="app-search d-none d-xl-flex me-xl-2">
+                <input type="search" class="form-control topbar-search" name="search"
+                       placeholder="Search for something...">
+                <i data-lucide="search" class="app-search-icon text-muted"></i>
+            </div>
+
+            <!-- Theme Dropdown -->
+            <div class="topbar-item me-2">
+                <div class="dropdown" data-dropdown="custom">
+                    <button class="topbar-link  fw-semibold" data-bs-toggle="dropdown" data-bs-offset="0,19"
+                            type="button" aria-haspopup="false" aria-expanded="false">
+                        <img data-trigger-img src="/images/themes/shadcn.svg" alt="user-image"
+                             class="w-100 rounded me-2"
+                             height="18">
+                        <span data-trigger-label class="text-nowrap"> Shadcn </span>
+                        <span class="dot-blink" aria-label="live status indicator"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-1">
+                        <div class="h-100" style="max-height: 250px;" data-simplebar>
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <button class="dropdown-item position-relative drop-custom-active"
+                                            data-skin="shadcn">
+                                        <img src="/images/themes/shadcn.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Shadcn</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="corporate">
+                                        <img src="/images/themes/corporate.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Corporate</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="spotify">
+                                        <img src="/images/themes/spotify.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Spotify</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="saas">
+                                        <img src="/images/themes/saas.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">SaaS</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="nature">
+                                        <img src="/images/themes/nature.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Nature</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="vintage">
+                                        <img src="/images/themes/vintage.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Vintage</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="leafline">
+                                        <img src="/images/themes/leafline.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Leafline</span>
+                                    </button>
                                 </div>
-                                <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
-                            </a>
 
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between bg-neutral-50">
-                                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                <span class="w-44-px h-44-px bg-success-subtle text-success-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
-                  <img src="/images/notification/profile-2.png" alt="">
-                </span>
-                                    <div>
-                                        <h6 class="text-md fw-semibold mb-4">Annette Black</h6>
-                                        <p class="mb-0 text-sm text-secondary-light text-w-200-px">Invite you to prototyping</p>
-                                    </div>
+                                <div class="col-md-6">
+                                    <button class="dropdown-item position-relative" data-skin="ghibli">
+                                        <img src="/images/themes/ghibli.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Ghibli</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="slack">
+                                        <img src="/images/themes/slack.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Slack</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="material">
+                                        <img src="/images/themes/material.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Material Design</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="flat">
+                                        <img src="/images/themes/flat.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Flat</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="pastel">
+                                        <img src="/images/themes/pastel.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Pastel Pop</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="caffieine">
+                                        <img src="/images/themes/caffieine.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Caffieine</span>
+                                    </button>
+
+                                    <button class="dropdown-item position-relative" data-skin="redshift">
+                                        <img src="/images/themes/redshift.svg" alt="" class="me-1 rounded"
+                                             height="18">
+                                        <span class="align-middle">Redshift</span>
+                                    </button>
                                 </div>
-                                <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
-                            </a>
+                            </div> <!-- end row-->
 
-                            <a href="javascript:void(0)" class="px-24 py-12 d-flex align-items-start gap-3 mb-2 justify-content-between">
-                                <div class="text-black hover-bg-transparent hover-text-primary d-flex align-items-center gap-3">
-                <span class="w-44-px h-44-px bg-info-subtle text-info-main rounded-circle d-flex justify-content-center align-items-center flex-shrink-0">
-                  DR
-                </span>
-                                    <div>
-                                        <h6 class="text-md fw-semibold mb-4">Darlene Robertson</h6>
-                                        <p class="mb-0 text-sm text-secondary-light text-w-200-px">Invite you to prototyping</p>
-                                    </div>
-                                </div>
-                                <span class="text-sm text-secondary-light flex-shrink-0">23 Mins ago</span>
-                            </a>
-                        </div>
 
-                        <div class="text-center py-12 px-16">
-                            <a href="javascript:void(0)" class="text-primary-600 fw-semibold text-md">See All Notification</a>
-                        </div>
+                        </div> <!-- end .h-100-->
+                    </div> <!-- .dropdown-menu-->
 
-                    </div>
-                </div><!-- Notification dropdown end -->
+                </div> <!-- end dropdown-->
+            </div> <!-- end topbar item-->
 
+            <!-- Language Dropdown -->
+            <div class="topbar-item">
                 <div class="dropdown">
-                    <button class="d-flex justify-content-center align-items-center rounded-circle" type="button" data-bs-toggle="dropdown">
-                        <img src="/images/user.png" alt="image" class="w-40-px h-40-px object-fit-cover rounded-circle">
+                    <button class="topbar-link fw-semibold" data-bs-toggle="dropdown" data-bs-offset="0,19"
+                            type="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="/images/flags/us.svg" alt="user-image" class="w-100 rounded me-2" height="18"
+                             id="selected-language-image">
+                        <span id="selected-language-code"> EN </span>
                     </button>
-                    <div class="dropdown-menu to-top dropdown-menu-sm">
-                        <div class="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
-                            <div>
-                                <h6 class="text-lg text-primary-light fw-semibold mb-2">Shaidul Islam</h6>
-                                <span class="text-secondary-light fw-medium text-sm">Admin</span>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="en" title="English">
+                            <img src="/images/flags/us.svg" alt="English" class="me-1 rounded" height="18"
+                                 data-translator-image>
+                            <span class="align-middle">English</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="de" title="German">
+                            <img src="/images/flags/de.svg" alt="German" class="me-1 rounded" height="18"
+                                 data-translator-image>
+                            <span class="align-middle">Deutsch</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="it" title="Italian">
+                            <img src="/images/flags/it.svg" alt="Italian" class="me-1 rounded" height="18"
+                                 data-translator-image>
+                            <span class="align-middle">Italiano</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="hi" title="Hindi">
+                            <img src="/images/flags/in.svg" alt="Hindi" class="me-1 rounded" height="18"
+                                 data-translator-image>
+                            <span class="align-middle">हिन्दी</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="es" title="Spanish">
+                            <img src="/images/flags/es.svg" alt="Spanish" class="me-1 rounded" height="18"
+                                 data-translator-image>
+                            <span class="align-middle">Español</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item" data-translator-lang="ru" title="Russian">
+                            <img src="/images/flags/ru.svg" alt="Russian" class="me-1 rounded" height="18"
+                                 data-translator-image>
+                            <span class="align-middle">Русский</span>
+                        </a>
+                    </div> <!-- end dropdown-menu-->
+                </div> <!-- end dropdown-->
+            </div> <!-- end topbar item-->
+
+            <!-- Notification Dropdown -->
+            <div class="topbar-item">
+                <div class="dropdown">
+                    <button class="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown"
+                            data-bs-offset="0,19" type="button" data-bs-auto-close="outside" aria-haspopup="false"
+                            aria-expanded="false">
+                        <i data-lucide="bell" class="fs-xxl"></i>
+                        <span class="badge badge-square text-bg-success topbar-badge">9</span>
+                    </button>
+
+                    <div class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                        <div class="px-3 py-2 border-bottom">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="m-0 fs-md fw-semibold">Notifications</h6>
+                                </div>
+                                <div class="col text-end">
+                                    <a href="#!" class="badge text-bg-light badge-label py-1">9 Alerts</a>
+                                </div>
                             </div>
-                            <button type="button" class="hover-text-danger">
-                                <iconify-icon icon="radix-icons:cross-1" class="icon text-xl"></iconify-icon>
-                            </button>
                         </div>
-                        <ul class="to-top-list">
-                            <li>
-                                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="view-profile.html">
-                                    <iconify-icon icon="solar:user-linear" class="icon text-xl"></iconify-icon>  My Profile</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="email.html">
-                                    <iconify-icon icon="tabler:message-check" class="icon text-xl"></iconify-icon>  Inbox</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="company.html">
-                                    <iconify-icon icon="icon-park-outline:setting-two" class="icon text-xl"></iconify-icon>  Setting</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3" href="javascript:void(0)">
-                                    <iconify-icon icon="lucide:power" class="icon text-xl"></iconify-icon>  Log Out</a>
-                            </li>
-                        </ul>
+
+                        <div style="max-height: 300px;" data-simplebar>
+                            <!-- item 1 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-1">
+                                        <span class="d-flex gap-2">
+                                            <span class="avatar-md flex-shrink-0">
+                                                <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-22">
+                                                    <i data-lucide="cloud-cog" class="fs-xl fill-primary"></i>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1 text-muted">
+                                                <span class="fw-medium text-body">Backup completed successfully</span><br>
+                                                <span class="fs-xs">Just now</span>
+                                            </span>
+                                            <button type="button" class="flex-shrink-0 text-muted btn shadow-none btn-link p-0"
+                                                    data-dismissible="#notification-1">
+                                                <i data-lucide="circle-x" class="fs-xxl"></i>
+                                            </button>
+                                        </span>
+                            </div>
+
+                            <!-- item 2 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-2">
+                                        <span class="d-flex gap-2">
+                                            <span class="avatar-md flex-shrink-0">
+                                                <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-22">
+                                                    <i data-lucide="bug" class="fs-xl fill-primary"></i>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1 text-muted">
+                                                <span class="fw-medium text-body">New bug reported in Payment Module</span><br>
+                                                <span class="fs-xs">8 minutes ago</span>
+                                            </span>
+                                            <button type="button" class="flex-shrink-0 text-muted btn shadow-none btn-link p-0"
+                                                    data-dismissible="#notification-2">
+                                                <i data-lucide="circle-x" class="fs-xxl"></i>
+                                            </button>
+                                        </span>
+                            </div>
+
+                            <!-- item 3 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap active" id="message-1">
+                                        <span class="d-flex gap-2">
+                                            <span class="flex-shrink-0">
+                                                <img src="/images/users/user-3.jpg" class="avatar-md rounded-circle"
+                                                     alt="User Avatar">
+                                            </span>
+                                            <span class="flex-grow-1 text-muted">
+                                                <span class="fw-medium text-body">Olivia Bennett</span> shared a new report in <span
+                                                        class="fw-medium text-body">Weekly Planning</span><br>
+                                                <span class="fs-xs">2 minutes ago</span>
+                                            </span>
+                                            <button type="button" class="flex-shrink-0 text-muted btn shadow-none btn-link p-0"
+                                                    data-dismissible="#message-1">
+                                                <i data-lucide="circle-x" class="fs-xxl"></i>
+                                            </button>
+                                        </span>
+                            </div>
+
+                            <!-- item 4 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-2">
+                                        <span class="d-flex gap-2">
+                                            <span class="flex-shrink-0">
+                                                <img src="/images/users/user-4.jpg" class="avatar-md rounded-circle"
+                                                     alt="User Avatar">
+                                            </span>
+                                            <span class="flex-grow-1 text-muted">
+                                                <span class="fw-medium text-body">Lucas Gray</span> mentioned you in <span
+                                                        class="fw-medium text-body">Sprint Standup</span><br>
+                                                <span class="fs-xs">14 minutes ago</span>
+                                            </span>
+                                            <button type="button" class="flex-shrink-0 text-muted btn shadow-none btn-link p-0"
+                                                    data-dismissible="#message-2">
+                                                <i data-lucide="circle-x" class="fs-xxl"></i>
+                                            </button>
+                                        </span>
+                            </div>
+
+                            <!-- item 5 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="message-3">
+                                        <span class="d-flex gap-2">
+                                            <span class="avatar-md flex-shrink-0">
+                                                <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-22">
+                                                    <i data-lucide="file-warning" class="fs-22 fill-primary"></i>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1 text-muted">
+                                                Security policy update required for your account<br>
+                                                <span class="fs-xs">22 minutes ago</span>
+                                            </span>
+                                            <button type="button" class="flex-shrink-0 text-muted btn shadow-none btn-link p-0"
+                                                    data-dismissible="#message-3">
+                                                <i data-lucide="circle-x" class="fs-xxl"></i>
+                                            </button>
+                                        </span>
+                            </div>
+
+                            <!-- item 6 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-6">
+                                        <span class="d-flex gap-2">
+                                            <span class="avatar-md flex-shrink-0">
+                                                <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-22">
+                                                    <i data-lucide="mail" class="fs-xl fill-primary"></i>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1 text-muted">
+                                                <span class="fw-medium text-body">You've received a new support ticket</span><br>
+                                                <span class="fs-xs">18 minutes ago</span>
+                                            </span>
+                                            <button type="button" class="flex-shrink-0 text-muted btn shadow-none btn-link p-0"
+                                                    data-dismissible="#notification-6">
+                                                <i data-lucide="circle-x" class="fs-xxl"></i>
+                                            </button>
+                                        </span>
+                            </div>
+
+                            <!-- item 7 -->
+                            <div class="dropdown-item notification-item py-2 text-wrap" id="notification-7">
+                                        <span class="d-flex gap-2">
+                                            <span class="avatar-md flex-shrink-0">
+                                                <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-22">
+                                                    <i data-lucide="calendar-clock" class="fs-xl fill-primary"></i>
+                                                </span>
+                                            </span>
+                                            <span class="flex-grow-1 text-muted">
+                                                <span class="fw-medium text-body">System maintenance starts at 12 AM</span><br>
+                                                <span class="fs-xs">1 hour ago</span>
+                                            </span>
+                                            <button type="button" class="flex-shrink-0 text-muted btn shadow-none btn-link p-0"
+                                                    data-dismissible="#notification-7">
+                                                <i data-lucide="circle-x" class="fs-xxl"></i>
+                                            </button>
+                                        </span>
+                            </div>
+                        </div> <!-- end dropdown -->
+
+
+                        <!-- All-->
+                        <a href="javascript:void(0);"
+                           class="dropdown-item text-center text-reset text-decoration-underline link-offset-2 fw-bold notify-item border-top border-light py-2">
+                            View All Notifications
+                        </a>
+
                     </div>
-                </div><!-- Profile dropdown end -->
+                </div>
+            </div>
+
+            <!-- Button Trigger Customizer Offcanvas -->
+            <div class="topbar-item d-none d-sm-flex">
+                <button class="topbar-link" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas"
+                        type="button">
+                    <i data-lucide="settings" class="fs-xxl"></i>
+                </button>
+            </div>
+
+            <!-- Light/Dark Mode Button -->
+            <div class="topbar-item d-none d-sm-flex">
+                <button class="topbar-link" id="light-dark-mode" type="button">
+                    <i data-lucide="moon" class="fs-xxl mode-light-moon"></i>
+                    <i data-lucide="sun" class="fs-xxl mode-light-sun"></i>
+                </button>
+            </div>
+
+            <!-- Monochrome Mode Button -->
+            <div class="topbar-item d-none d-sm-flex">
+                <button class="topbar-link" id="monochrome-mode" type="button">
+                    <i data-lucide="palette" class="fs-xxl mode-light-moon"></i>
+                </button>
+            </div>
+
+            <!-- User Dropdown -->
+            <div class="topbar-item nav-user">
+                <div class="dropdown">
+                    <a class="topbar-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown"
+                       data-bs-offset="0,13" href="#!" aria-haspopup="false" aria-expanded="false">
+                        <img src="/images/users/user-2.jpg" width="32" class="rounded-circle d-flex"
+                             alt="user-image">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <!-- Header -->
+                        <div class="dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">Welcome back!</h6>
+                        </div>
+
+                        <!-- My Profile -->
+                        <a href="#!" class="dropdown-item">
+                            <i class="ti ti-user-circle me-2 fs-17 align-middle"></i>
+                            <span class="align-middle">Profile</span>
+                        </a>
+
+                        <!-- Notifications -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <i class="ti ti-bell-ringing me-2 fs-17 align-middle"></i>
+                            <span class="align-middle">Notifications</span>
+                        </a>
+
+                        <!-- Wallet -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <i class="ti ti-credit-card me-2 fs-17 align-middle"></i>
+                            <span class="align-middle">Balance: <span class="fw-semibold">$985.25</span></span>
+                        </a>
+
+                        <!-- Settings -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <i class="ti ti-settings-2 me-2 fs-17 align-middle"></i>
+                            <span class="align-middle">Account Settings</span>
+                        </a>
+
+                        <!-- Support -->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <i class="ti ti-headset me-2 fs-17 align-middle"></i>
+                            <span class="align-middle">Support Center</span>
+                        </a>
+
+                        <!-- Divider -->
+                        <div class="dropdown-divider"></div>
+
+                        <!-- Lock -->
+                        <a href="auth-lock-screen.html" class="dropdown-item">
+                            <i class="ti ti-lock me-2 fs-17 align-middle"></i>
+                            <span class="align-middle">Lock Screen</span>
+                        </a>
+
+                        <!-- Logout -->
+                        <a href="javascript:void(0);" class="dropdown-item text-danger fw-semibold">
+                            <i class="ti ti-logout-2 me-2 fs-17 align-middle"></i>
+                            <span class="align-middle">Log Out</span>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
+</header>
+<script>
+    // Skin Dropdown
+    document.querySelectorAll('[data-dropdown="custom"]').forEach(dropdown => {
+        const trigger = dropdown.querySelector('a[data-bs-toggle="dropdown"], button[data-bs-toggle="dropdown"]');
+        const items = dropdown.querySelectorAll('button[data-skin]');
+
+        const triggerImg = trigger.querySelector('[data-trigger-img]');
+        const triggerLabel = trigger.querySelector('[data-trigger-label]');
+
+        const config = JSON.parse(JSON.stringify(window.config));
+        const currentSkin = config.skin;
+
+        items.forEach(item => {
+            const itemSkin = item.getAttribute('data-skin');
+            const itemImg = item.querySelector('img')?.getAttribute('src');
+            const itemText = item.querySelector('span')?.textContent.trim();
+
+            // Set active on load
+            if (itemSkin === currentSkin) {
+                item.classList.add('drop-custom-active');
+                if (triggerImg && itemImg) triggerImg.setAttribute('src', itemImg);
+                if (triggerLabel && itemText) triggerLabel.textContent = itemText;
+            } else {
+                item.classList.remove('drop-custom-active');
+            }
+
+            // Click handler
+            item.addEventListener('click', function () {
+                items.forEach(i => i.classList.remove('drop-custom-active'));
+                this.classList.add('drop-custom-active');
+
+                const newImg = this.querySelector('img')?.getAttribute('src');
+                const newText = this.querySelector('span')?.textContent.trim();
+
+                if (triggerImg && newImg) triggerImg.setAttribute('src', newImg);
+                if (triggerLabel && newText) triggerLabel.textContent = newText;
+
+                if (typeof layoutCustomizer !== 'undefined') {
+                    layoutCustomizer.changeSkin(itemSkin);
+                }
+            });
+        });
+    });
+</script>
