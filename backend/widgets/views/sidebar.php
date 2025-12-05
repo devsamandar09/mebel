@@ -23,60 +23,33 @@
                 </a>
             </li>
 
-            <li class="side-nav-item">
-                <a href="/aboutcompany" class="side-nav-link">
-                    <span class="menu-icon"><i data-lucide="sparkles"></i></span>
-                    <span class="menu-text"> Kompaniya haqida</span>
-                </a>
-            </li>
 
-            <li class="side-nav-item">
-                <a href="calendar.html" class="side-nav-link">
-                    <span class="menu-icon"><i data-lucide="calendar"></i></span>
-                    <span class="menu-text" data-lang="calendar"> Calendar </span>
-                </a>
-            </li>
 
-            <li class="side-nav-item">
-                <a href="directory.html" class="side-nav-link">
-                    <span class="menu-icon"><i data-lucide="book-user"></i></span>
-                    <span class="menu-text" data-lang="directory"> Directory </span>
-                </a>
-            </li>
+<!--            <li class="side-nav-item">-->
+<!--                <a href="calendar.html" class="side-nav-link">-->
+<!--                    <span class="menu-icon"><i data-lucide="calendar"></i></span>-->
+<!--                    <span class="menu-text" data-lang="calendar"> Calendar </span>-->
+<!--                </a>-->
+<!--            </li>-->
 
-            <li class="side-nav-title mt-2" data-lang="pages-title">Custom Pages</li>
+
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
                     <span class="menu-icon"><i data-lucide="notebook-text"></i></span>
-                    <span class="menu-text" data-lang="pages"> Pages </span>
+                    <span class="menu-text" data-lang="pages"> Kompaniya haqida </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarPages">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="pages-pricing.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="pages-pricing">Pricing</span>
+                            <a href="/aboutcompany" class="side-nav-link">
+                                <span class="menu-text" data-lang="pages-pricing">Jadval</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="pages-empty.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="pages-empty">Empty Page</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="pages-timeline.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="pages-timeline">Timeline</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="pages-terms-conditions.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="pages-terms-conditions">Terms & Conditions</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="pages-invoice.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="invoice">Invoice</span>
+                            <a href="/aboutcompany/create" class="side-nav-link">
+                                <span class="menu-text" data-lang="pages-empty">Yaratish</span>
                             </a>
                         </li>
                     </ul>
@@ -86,44 +59,19 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth" class="side-nav-link">
                     <span class="menu-icon"><i data-lucide="fingerprint"></i></span>
-                    <span class="menu-text" data-lang="authentication"> Authentication </span>
+                    <span class="menu-text" data-lang="authentication"> Kompaniya tarixi </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarPagesAuth">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="auth-sign-in.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="auth-sign-in">Sign In</span>
+                            <a href="/companyhistory" class="side-nav-link">
+                                <span class="menu-text" data-lang="auth-sign-in">Jadval</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="auth-sign-up.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="auth-sign-up">Sign Up</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="auth-reset-pass.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="auth-reset-pass">Reset Password</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="auth-new-pass.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="auth-new-pass">New Password</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="auth-two-factor.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="auth-two-factor">Two Factor</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="auth-lock-screen.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="auth-lock-screen">Lock Screen</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="404.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="error-404">404 – Not Found</span>
+                            <a href="/companyhistory/create" class="side-nav-link">
+                                <span class="menu-text" data-lang="auth-sign-up">Yaratish</span>
                             </a>
                         </li>
                     </ul>
@@ -133,83 +81,43 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarBaseUI" aria-expanded="false" aria-controls="sidebarBaseUI" class="side-nav-link">
                     <span class="menu-icon"><i data-lucide="pencil-ruler"></i></span>
-                    <span class="menu-text" data-lang="ui-components"> UI Components </span>
+                    <span class="menu-text" data-lang="ui-components"> Kompaniya vizitkasi </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarBaseUI">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="ui-core.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="ui-core">Core Elements</span>
+                            <a href="/companycard" class="side-nav-link">
+                                <span class="menu-text" data-lang="ui-core">Jadval</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="ui-interactive.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="ui-interactive">Interactive Features</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="ui-menu-links.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="ui-menu-links">Menu & Links</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="ui-visual-feedback.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="ui-visual-feedback">Visual Feedback</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="ui-utilities.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="ui-utilities">Utilities</span>
+                            <a href="/companycard/create" class="side-nav-link">
+                                <span class="menu-text" data-lang="ui-interactive">Yaratish</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </li>
 
-            <li class="side-nav-item">
-                <a href="charts.html" class="side-nav-link">
-                    <span class="menu-icon"><i data-lucide="chart-pie"></i></span>
-                    <span class="menu-text" data-lang="charts"> Charts </span>
-                </a>
-            </li>
+
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarForms" aria-expanded="false" aria-controls="sidebarForms" class="side-nav-link">
                     <span class="menu-icon"><i data-lucide="square-pi"></i></span>
-                    <span class="menu-text" data-lang="forms">Forms</span>
+                    <span class="menu-text" data-lang="forms">Top menejerlar</span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarForms">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="form-elements.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="form-elements">Basic Elements</span>
+                            <a href="/topmanagers" class="side-nav-link">
+                                <span class="menu-text" data-lang="form-elements">Jadval</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="form-plugins.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="form-plugins">Plugins</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="form-validation.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="form-validation">Validation</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="form-wizard.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="form-wizard">Wizard</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="form-fileuploads.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="form-fileuploads">File Uploads</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="form-quill-editor.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="form-quilljs">Quilljs Editors</span>
+                            <a href="/topmanagers/create" class="side-nav-link">
+                                <span class="menu-text" data-lang="form-plugins">Yaratish</span>
                             </a>
                         </li>
                     </ul>
@@ -219,71 +127,22 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarTables" aria-expanded="false" aria-controls="sidebarTables" class="side-nav-link">
                     <span class="menu-icon"><i data-lucide="table-2"></i></span>
-                    <span class="menu-text" data-lang="tables">Tables</span>
+                    <span class="menu-text" data-lang="tables">Ishlab chiqarish</span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarTables">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="tables-static.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="tables-static">Static Tables</span>
+                            <a href="/production" class="side-nav-link">
+                                <span class="menu-text" data-lang="tables-static">Jadval</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarDataTables" aria-expanded="false" aria-controls="sidebarDataTables" class="side-nav-link">
-                                <span class="menu-text" data-lang="datatables">DataTables</span>
-                                <span class="badge bg-success">09</span>
+                            <a href="/production/create" class="side-nav-link">
+                                <span class="menu-text" data-lang="tables-static">Yaratish</span>
                             </a>
-                            <div class="collapse" id="sidebarDataTables">
-                                <ul class="sub-menu">
-                                    <li class="side-nav-item">
-                                        <a href="tables-datatables-basic.html" class="side-nav-link">
-                                            <span class="menu-text" data-lang="tables-datatables-basic">Basic</span>
-                                        </a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a href="tables-datatables-export-data.html" class="side-nav-link">
-                                            <span class="menu-text" data-lang="tables-datatables-export-data">Export Data</span>
-                                        </a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a href="tables-datatables-select.html" class="side-nav-link">
-                                            <span class="menu-text" data-lang="tables-datatables-select">Select</span>
-                                        </a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a href="tables-datatables-ajax.html" class="side-nav-link">
-                                            <span class="menu-text" data-lang="tables-datatables-ajax">Ajax</span>
-                                        </a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a href="tables-datatables-javascript.html" class="side-nav-link">
-                                            <span class="menu-text" data-lang="tables-datatables-javascript">Javascript Source</span>
-                                        </a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a href="tables-datatables-rendering.html" class="side-nav-link">
-                                            <span class="menu-text" data-lang="tables-datatables-rendering">Data Rendering</span>
-                                        </a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a href="tables-datatables-columns.html" class="side-nav-link">
-                                            <span class="menu-text" data-lang="tables-datatables-columns">Show & Hide Column</span>
-                                        </a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a href="tables-datatables-child-rows.html" class="side-nav-link">
-                                            <span class="menu-text" data-lang="tables-datatables-child-rows">Child Rows</span>
-                                        </a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a href="tables-datatables-checkbox-select.html" class="side-nav-link">
-                                            <span class="menu-text" data-lang="tables-datatables-checkbox-select">Checkbox Select</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
+
                     </ul>
                 </div>
             </li>
@@ -291,24 +150,19 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarIcons" aria-expanded="false" aria-controls="sidebarIcons" class="side-nav-link">
                     <span class="menu-icon"><i data-lucide="layers-2"></i></span>
-                    <span class="menu-text" data-lang="icons">Icons</span>
+                    <span class="menu-text" data-lang="icons">Homiylar</span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarIcons">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="icons-tabler.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="icons-tabler">Tabler</span>
+                            <a href="/sponsors" class="side-nav-link">
+                                <span class="menu-text" data-lang="icons-tabler">Jadval</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="icons-lucide.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="icons-lucide">Lucide</span>
-                            </a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="icons-flags.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="icons-flags">Flags</span>
+                            <a href="/sponsors/create" class="side-nav-link">
+                                <span class="menu-text" data-lang="icons-lucide">Yaratish</span>
                             </a>
                         </li>
                     </ul>
@@ -318,98 +172,48 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarMaps" aria-expanded="false" aria-controls="sidebarMaps" class="side-nav-link">
                     <span class="menu-icon"><i data-lucide="map-pin"></i></span>
-                    <span class="menu-text" data-lang="maps">Maps</span>
+                    <span class="menu-text" data-lang="maps">Kategoriyalar</span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarMaps">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="maps-vector.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="maps-vector">Vector Maps</span>
+                            <a href="/categories" class="side-nav-link">
+                                <span class="menu-text" data-lang="maps-vector">Jadval</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="maps-leaflet.html" class="side-nav-link">
-                                <span class="menu-text" data-lang="maps-leaflet">Leaflet Maps</span>
+                            <a href="/categories/create" class="side-nav-link">
+                                <span class="menu-text" data-lang="maps-leaflet">Yaratish</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </li>
-
-            <li class="side-nav-title mt-2" data-lang="items-title">Menu Items</li>
-
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarMenuLevels" aria-expanded="false" aria-controls="sidebarMenuLevels" class="side-nav-link">
                     <span class="menu-icon"><i data-lucide="command"></i></span>
-                    <span class="menu-text" data-lang="menu-levels"> Menu Levels </span>
+                    <span class="menu-text" data-lang="menu-levels"> Products </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarMenuLevels">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarSecondLevel" aria-expanded="false" aria-controls="sidebarSecondLevel" class="side-nav-link">
-                                <span class="menu-text" data-lang="second-level"> Second Level </span>
-                                <span class="menu-arrow"></span>
+                            <a href="/products" class="side-nav-link">
+                                <span class="menu-text" data-lang="maps-vector">Jadval</span>
                             </a>
-                            <div class="collapse" id="sidebarSecondLevel">
-                                <ul class="sub-menu">
-                                    <li class="side-nav-item">
-                                        <a href="javascript: void(0);" class="side-nav-link">
-                                            <span class="menu-text">Item 2.1</span>
-                                        </a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a href="javascript: void(0);" class="side-nav-link">
-                                            <span class="menu-text">Item 2.2</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                         <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarThirdLevel" aria-expanded="false" aria-controls="sidebarThirdLevel" class="side-nav-link">
-                                <span class="menu-text" data-lang="third-level"> Third Level </span>
-                                <span class="menu-arrow"></span>
+                            <a href="/products/create" class="side-nav-link">
+                                <span class="menu-text" data-lang="maps-leaflet">Yaratish</span>
                             </a>
-                            <div class="collapse" id="sidebarThirdLevel">
-                                <ul class="sub-menu">
-                                    <li class="side-nav-item">
-                                        <a href="javascript: void(0);" class="side-nav-link">Item 1</a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel" aria-expanded="false" aria-controls="sidebarFourthLevel" class="side-nav-link">
-                                            <span class="menu-text"> Item 2 </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel">
-                                            <ul class="sub-menu">
-                                                <li class="side-nav-item">
-                                                    <a href="javascript: void(0);" class="side-nav-link">
-                                                        <span class="menu-text">Item 3.1</span>
-                                                    </a>
-                                                </li>
-                                                <li class="side-nav-item">
-                                                    <a href="javascript: void(0);" class="side-nav-link">
-                                                        <span class="menu-text">Item 3.2</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                     </ul>
                 </div>
+
             </li>
 
-            <li class="side-nav-item">
-                <a href="#!" class="side-nav-link disabled">
-                    <span class="menu-icon"><i data-lucide="shield-ban"></i></span>
-                    <span class="menu-text" data-lang="disabled-menu"> Disabled Menu </span>
-                </a>
-            </li>
+
         </ul>
     </div>
 
