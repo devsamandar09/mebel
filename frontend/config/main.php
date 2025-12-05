@@ -9,8 +9,11 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
+    'controllerNamespace' => 'frontend\controllers',  // <-- BU QATOR
     'bootstrap' => ['log'],
-    'controllerNamespace' => 'frontend\controllers',
+    'language' => 'uz',
+    'sourceLanguage' => 'en-US',
+
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -21,7 +24,6 @@ return [
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
         'session' => [
-            // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
         ],
         'log' => [
@@ -36,14 +38,24 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@frontend/messages',
+                    'sourceLanguage' => 'en-US',
+                ],
+            ],
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '<language:(uz|ru)>/' => 'site/index',
+                '<language:(uz|ru)>/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ],
         ],
-
     ],
+
     'params' => $params,
 ];
