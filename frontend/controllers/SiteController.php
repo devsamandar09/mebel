@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use frontend\components\LanguageBehavior;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -27,6 +28,9 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
+            'language' => [
+                'class' => LanguageBehavior::class,
+            ],
             'access' => [
                 'class' => AccessControl::class,
                 'only' => ['logout', 'signup'],
