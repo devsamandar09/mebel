@@ -1,7 +1,5 @@
 <?php
 return [
-    'Home' => 'Главная',
-    'About' => 'О нас',
-    'Contact' => 'Контакты',
-    'Login' => 'Вход',
-];
+ 'menu1'=> 'Bosh sahifa',
+'banner1'   =>'"Uyngizga Mos Mukammallik"'
+    ];

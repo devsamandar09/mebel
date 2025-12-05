@@ -25,7 +25,7 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-
+<?= \frontend\widgets\LanguageSwitcher::widget() ?>
 
         <?= $content ?>
 

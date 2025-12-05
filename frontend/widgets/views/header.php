@@ -16,7 +16,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index-2.html">Home</a>
+                                <a class="nav-link" href="index-2.html"><?= Yii::t('app', 'menu1') ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.html">About</a>
@@ -94,7 +94,7 @@
                         <div class="item">
                             <div class="banner_content">
                                 <div class="content">
-                                    <h1>Design Your Home With Our Modern Interior Designs</h1>
+                                    <h1><?=Yii::t('app', 'banner1')?></h1>
                                     <p>Quis aute irure dolor in rearehenderit in vouta velit esse fugiat nulla pariatur.</p>
                                     <div class="discover-button">
                                         <a class="discover_more text-decoration-none" href="about.html">Discover More</a>
