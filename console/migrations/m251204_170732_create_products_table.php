@@ -28,7 +28,7 @@ class m251204_170732_create_products_table extends Migration
             '{{%products}}',
             'category_id',
             '{{%categories}}',
-            'id',
+            '587id',
             'CASCADE'
         );
 
