@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description_ru')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'image')->fileInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'created_at')->textInput() ?>
 

@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `{{%products}}`.
  */
-class m251201_173124_create_products_table extends Migration
+class m251204_170732_create_products_table extends Migration
 {
     /**
      * {@inheritdoc}
@@ -28,9 +28,10 @@ class m251201_173124_create_products_table extends Migration
             '{{%products}}',
             'category_id',
             '{{%categories}}',
-            'id',
+            '587id',
             'CASCADE'
         );
+
     }
 
     /**

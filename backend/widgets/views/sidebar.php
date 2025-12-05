@@ -17,17 +17,16 @@
         <ul class="side-nav">
 
             <li class="side-nav-item">
-                <a href="index.html" class="side-nav-link">
+                <a href="/" class="side-nav-link">
                     <span class="menu-icon"><i data-lucide="circle-gauge"></i></span>
                     <span class="menu-text" data-lang="dashboard">Dashboard</span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="ton-ai.html" class="side-nav-link">
+                <a href="/aboutcompany" class="side-nav-link">
                     <span class="menu-icon"><i data-lucide="sparkles"></i></span>
-                    <span class="menu-text"> Ton AI </span>
-                    <span class="badge text-bg-primary">Hot</span>
+                    <span class="menu-text"> Kompaniya haqida</span>
                 </a>
             </li>
 
