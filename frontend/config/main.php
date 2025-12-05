@@ -12,6 +12,18 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@frontend/messages',
+                    'sourceLanguage' => 'en-US',
+                ],
+            ],
+        ],
+        'params' => [
+            'languages' => ['uz' => "O'zbekcha", 'ru' => 'Русский'],
+        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],

@@ -11,8 +11,6 @@
                     </figure>
                     <div class="badge c-black" id="badge">
                         <span class="badge__char"> </span>
-                        <span class="badge__char badge__char1"></span>
-                        <span class="badge__char"> </span>
                         <span class="badge__char">B</span>
                         <span class="badge__char">R</span>
                         <span class="badge__char">R</span>
