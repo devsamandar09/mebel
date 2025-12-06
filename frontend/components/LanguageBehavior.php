@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\components;
 
 use yii\base\Behavior;
@@ -17,8 +18,9 @@ class LanguageBehavior extends Behavior
     public function beforeAction($event)
     {
         $language = Yii::$app->request->get('language');
+        $supportedLanguages = ['uz', 'ru'];
 
-        if ($language && in_array($language, array_keys(Yii::$app->params['languages']))) {
+        if ($language && in_array($language, $supportedLanguages)) {
             Yii::$app->language = $language;
             Yii::$app->session->set('language', $language);
         } elseif (Yii::$app->session->has('language')) {

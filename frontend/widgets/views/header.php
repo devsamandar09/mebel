@@ -1,12 +1,12 @@
 <div class="banner_outer">
     <figure class="light-image mb-0">
-        <img src="/images/IMG_0050.png" alt="" class="img-fluid">
     </figure>
     <header class="header">
         <div class="main-header">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index-2.html"><figure class="mb-0 banner-logo"><img src="/images/IMG_0050.png" alt="" class="img-fluid"></figure></a>
+                    <img src="/images/IMG_0050.png" alt="" class="img-fluid" width="250px"; height="250px">
+
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                             aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -16,7 +16,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index-2.html">Home</a>
+                                <a class="nav-link" href="index-2.html"><?= Yii::t('app', 'menu1') ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.html">About</a>
@@ -94,7 +94,7 @@
                         <div class="item">
                             <div class="banner_content">
                                 <div class="content">
-                                    <h1>Design Your Home With Our Modern Interior Designs</h1>
+                                    <h1><?=Yii::t('app', 'banner1')?></h1>
                                     <p>Quis aute irure dolor in rearehenderit in vouta velit esse fugiat nulla pariatur.</p>
                                     <div class="discover-button">
                                         <a class="discover_more text-decoration-none" href="about.html">Discover More</a>
