@@ -24,26 +24,50 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'name_uz',
-            'name_ru',
-            'description_uz',
-            'description_ru',
-            //'logo',
-            //'created_at',
-            //'updated_at',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Sponsors $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                    'id',
+                    'name_uz',
+                    'name_ru',
+                    'description_uz',
+                    'description_ru',
+                // 'logo',
+                // 'created_at',
+                // 'updated_at',
+
+                    [
+                            'class' => ActionColumn::class,
+                            'template' => '{update} {delete}',
+                            'buttons' => [
+                                    'update' => function ($url, $model) {
+                                        return Html::a('✏️', $url, [
+                                                'class' => 'btn btn-sm btn-outline-primary',
+                                                'title' => 'Edit',
+                                                'aria-label' => 'Edit',
+                                                'data-pjax' => '0',
+                                        ]);
+                                    },
+                                    'delete' => function ($url, $model) {
+                                        return Html::a('🗑️', $url, [
+                                                'class' => 'btn btn-sm btn-outline-danger',
+                                                'title' => 'Delete',
+                                                'aria-label' => 'Delete',
+                                                'data' => [
+                                                        'confirm' => 'Are you sure you want to delete?',
+                                                        'method' => 'post',
+                                                ],
+                                        ]);
+                                    },
+                            ],
+                            'contentOptions' => ['style' => 'white-space:nowrap;'],
+                            'urlCreator' => function ($action, Sponsors $model) {
+                                return Url::to([$action, 'id' => $model->id]);
+                            },
+                    ],
             ],
-        ],
     ]); ?>
 
 

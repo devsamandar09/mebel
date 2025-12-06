@@ -42,12 +42,12 @@ $this->params['breadcrumbs'][] = $this->title;
                             'template' => '{update} {delete}',
                             'buttons' => [
                                     'update' => function ($url, $model) {
-                                        return Html::a('Edit', $url, [
+                                        return Html::a('✏️', $url, [
                                                 'class' => 'btn btn-sm btn-outline-primary',
                                         ]);
                                     },
                                     'delete' => function ($url, $model) {
-                                        return Html::a('Delete', $url, [
+                                        return Html::a('🗑️', $url, [
                                                 'class' => 'btn btn-sm btn-outline-danger',
                                                 'data' => [
                                                         'confirm' => 'Are you sure you want to delete?',
