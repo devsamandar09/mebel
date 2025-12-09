@@ -19,10 +19,10 @@
                                 <a class="nav-link" href="index-2.html"><?= Yii::t('app', 'menu1') ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html">About</a>
+                                <a class="nav-link" href="about.html"><?= Yii::t('app', 'menu2') ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="service.html">Services</a>
+                                <a class="nav-link" href="service.html"><?= Yii::t('app', 'menu3') ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="portfolio.html">Portfolio</a>
@@ -95,41 +95,9 @@
                             <div class="banner_content">
                                 <div class="content">
                                     <h1><?=Yii::t('app', 'banner1')?></h1>
-                                    <p>Quis aute irure dolor in rearehenderit in vouta velit esse fugiat nulla pariatur.</p>
+                                    <p><?=Yii::t('app', 'banner2')?></p>
                                     <div class="discover-button">
-                                        <a class="discover_more text-decoration-none" href="about.html">Discover More</a>
-                                        <a class="image-button text-decoration-none" href="about.html">
-                                            <figure class="arrow mb-0">
-                                                <img src="/images/arrow.png" alt="" class="img-fluid">
-                                            </figure>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="banner_content">
-                                <div class="content">
-                                    <h1>Design Your Home With Our Modern Interior Designs</h1>
-                                    <p>Quis aute irure dolor in rearehenderit in vouta velit esse fugiat nulla pariatur.</p>
-                                    <div class="discover-button">
-                                        <a class="discover_more text-decoration-none" href="about.html">Discover More</a>
-                                        <a class="image-button text-decoration-none" href="about.html">
-                                            <figure class="arrow mb-0">
-                                                <img src="/images/arrow.png" alt="" class="img-fluid">
-                                            </figure>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="banner_content">
-                                <div class="content">
-                                    <h1>Design Your Home With Our Modern Interior Designs</h1>
-                                    <p>Quis aute irure dolor in rearehenderit in vouta velit esse fugiat nulla pariatur.</p>
-                                    <div class="discover-button">
-                                        <a class="discover_more text-decoration-none" href="about.html">Discover More</a>
+                                        <a class="discover_more text-decoration-none" href="about.html"><?=Yii::t('app', 'banner3')?></a>
                                         <a class="image-button text-decoration-none" href="about.html">
                                             <figure class="arrow mb-0">
                                                 <img src="/images/arrow.png" alt="" class="img-fluid">

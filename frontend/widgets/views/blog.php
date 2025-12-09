@@ -6,8 +6,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="blog_content" data-aos="fade-up">
-                    <h6>Latest News</h6>
-                    <h2>Our Recent Blog Posts</h2>
+                    <h6><?=Yii::t('app', 'blog1')?></h6>
+                    <h2><?=Yii::t('app', 'blog2')?></h2>
                 </div>
             </div>
         </div>
