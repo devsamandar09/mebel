@@ -6,8 +6,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="testimonial_content" data-aos="fade-right">
-                    <h6>Testimonials</h6>
-                    <h2>Trusted By Over 30,000 Worldwide Customers Since 1998</h2>
+                    <h6><?=Yii::t('app', 'testimonial1')?></h6>
+                    <h2><?=Yii::t('app', 'testimonial2')?></h2>
                 </div>
             </div>
         </div>

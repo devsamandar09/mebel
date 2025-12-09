@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="recentwork_content" data-aos="fade-up">
-                    <h6>What’s New</h6>
-                    <h2>Recent Work We Have Done</h2>
+                    <h6><?=Yii::t('app', 'recentwork1')?></h6>
+                    <h2><?=Yii::t('app', 'recentwork2')?></h2>
                 </div>
             </div>
         </div>

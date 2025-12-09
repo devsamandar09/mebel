@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="process_content" data-aos="fade-up">
-                    <h6>Our Process</h6>
-                    <h2>See How We Work For You</h2>
+                    <h6><?=Yii::t('app', 'process1')?></h6>
+                    <h2><?=Yii::t('app', 'process2')?></h2>
                 </div>
             </div>
         </div>
