@@ -8,38 +8,67 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="company-card-form">
+<div class="company-card-form" style="margin-top: 50px;">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title"><?= Html::encode($this->title) ?></h5>
+        </div>
+        <div class="card-body">
+            <?php $form = ActiveForm::begin(); ?>
 
-    <?php $form = ActiveForm::begin(); ?>
+            <div class="row">
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'contacts')->textInput(['maxlength' => true]) ?>
+                </div>
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'contacts')->textInput(['maxlength' => true]) ?>
+            <div class="row">
+                <div class="col-lg-12">
+                    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
+            <div class="row">
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'instagram_link')->textInput(['maxlength' => true]) ?>
+                </div>
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'facebook_link')->textInput(['maxlength' => true]) ?>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+            <div class="row">
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'linkedin_link')->textInput(['maxlength' => true]) ?>
+                </div>
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'youtube_link')->textInput(['maxlength' => true]) ?>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'instagram_link')->textInput(['maxlength' => true]) ?>
+            <div class="row">
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'Why_us_uz')->textarea(['rows' => 6]) ?>
+                </div>
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'Why_us_ru')->textarea(['rows' => 6]) ?>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'facebook_link')->textInput(['maxlength' => true]) ?>
+            <div class="row">
+                <div class="col-lg-12">
+                    <?= $form->field($model, 'regular_customers')->textInput(['maxlength' => true]) ?>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'linkedin_link')->textInput(['maxlength' => true]) ?>
+            <div class="form-group">
+                <?= Html::submitButton('Saqlash', ['class' => 'btn btn-success']) ?>
+            </div>
 
-    <?= $form->field($model, 'youtube_link')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'Why_us_uz')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'Why_us_ru')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'regular_customers')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+            <?php ActiveForm::end(); ?>
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
-
 </div>

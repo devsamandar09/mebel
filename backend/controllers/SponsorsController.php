@@ -7,6 +7,7 @@ use common\models\SponsorsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * SponsorsController implements the CRUD actions for Sponsors model.
@@ -69,8 +70,17 @@ class SponsorsController extends Controller
     {
         $model = new Sponsors();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post())) {
+
+            $model->logoFile = UploadedFile::getInstance($model, 'logoFile');
+
+            // Avval fayllarni yuklash
+            $model->uploadLogo();
+
+            // Upload qilingandan keyin null qilish (validator xato bermasligi uchun)
+            $model->logoFile = null;
+
+            if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -93,8 +103,19 @@ class SponsorsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+
+            $model->logoFile = UploadedFile::getInstance($model, 'logoFile');
+
+            // Avval fayllarni yuklash
+            $model->uploadLogo();
+
+            // Upload qilingandan keyin null qilish
+            $model->logoFile = null;
+
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [

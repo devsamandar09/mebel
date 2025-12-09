@@ -7,6 +7,7 @@ use common\models\NewsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * NewsController implements the CRUD actions for News model.
@@ -69,8 +70,17 @@ class NewsController extends Controller
     {
         $model = new News();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post())) {
+
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+            // Avval fayllarni yuklash
+            $model->uploadImage();
+
+            // Upload qilingandan keyin null qilish (validator xato bermasligi uchun)
+            $model->imageFile = null;
+
+            if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -93,8 +103,19 @@ class NewsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+            // Avval fayllarni yuklash
+            $model->uploadImage();
+
+            // Upload qilingandan keyin null qilish
+            $model->imageFile = null;
+
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [

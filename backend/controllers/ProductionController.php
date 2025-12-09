@@ -7,6 +7,7 @@ use common\models\ProductionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ProductionController implements the CRUD actions for Production model.
@@ -69,8 +70,20 @@ class ProductionController extends Controller
     {
         $model = new Production();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post())) {
+
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->videoFile = UploadedFile::getInstance($model, 'videoFile');
+
+            // Avval fayllarni yuklash
+            $model->uploadImage();
+            $model->uploadVideo();
+
+            // Upload qilingandan keyin null qilish (validator xato bermasligi uchun)
+            $model->imageFile = null;
+            $model->videoFile = null;
+
+            if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -93,8 +106,22 @@ class ProductionController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->videoFile = UploadedFile::getInstance($model, 'videoFile');
+
+            // Avval fayllarni yuklash
+            $model->uploadImage();
+            $model->uploadVideo();
+
+            // Upload qilingandan keyin null qilish
+            $model->imageFile = null;
+            $model->videoFile = null;
+
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [

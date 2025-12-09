@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "company_history".
@@ -22,7 +24,15 @@ use Yii;
  */
 class CompanyHistory extends \yii\db\ActiveRecord
 {
+    /**
+     * @var UploadedFile
+     */
+    public $imageFile;
 
+    /**
+     * @var UploadedFile
+     */
+    public $videoFile;
 
     /**
      * {@inheritdoc}
@@ -35,14 +45,29 @@ class CompanyHistory extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::class,
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function rules()
     {
         return [
-            [['description_uz', 'description_ru', 'image', 'video'], 'default', 'value' => null],
-            [['company_id', 'title_uz', 'title_ru', 'created_at', 'updated_at'], 'required'],
-            [['company_id', 'created_at', 'updated_at'], 'integer'],
-            [['title_uz', 'title_ru', 'description_uz', 'description_ru', 'image', 'video'], 'string', 'max' => 255],
+            [['company_id', 'title_uz', 'title_ru'], 'required'],
+            [['company_id'], 'integer'],
+            [['description_uz', 'description_ru'], 'string'],
+            [['title_uz', 'title_ru'], 'string', 'max' => 255],
+            [['image', 'video'], 'string', 'max' => 500],
             [['company_id'], 'exist', 'skipOnError' => true, 'targetClass' => AboutCompany::class, 'targetAttribute' => ['company_id' => 'id']],
+
+            // File upload rules
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg, gif, webp', 'maxSize' => 1024 * 1024 * 2],
+            [['videoFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'mp4, avi, mov, webm', 'maxSize' => 1024 * 1024 * 50],
         ];
     }
 
@@ -60,9 +85,89 @@ class CompanyHistory extends \yii\db\ActiveRecord
             'description_ru' => 'Description Ru',
             'image' => 'Image',
             'video' => 'Video',
+            'imageFile' => 'Rasm yuklash',
+            'videoFile' => 'Video yuklash',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
+    }
+
+    /**
+     * Upload image file
+     * @return bool
+     */
+    public function uploadImage()
+    {
+        if ($this->imageFile) {
+            $uploadPath = Yii::getAlias('@frontend/web/uploads/company-history/images/');
+
+            if (!is_dir($uploadPath)) {
+                mkdir($uploadPath, 0777, true);
+            }
+
+            // Delete old image
+            $this->deleteOldFile($this->image);
+
+            $fileName = time() . '_' . Yii::$app->security->generateRandomString(8) . '.' . $this->imageFile->extension;
+
+            if ($this->imageFile->saveAs($uploadPath . $fileName)) {
+                $this->image = '/uploads/company-history/images/' . $fileName;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Upload video file
+     * @return bool
+     */
+    public function uploadVideo()
+    {
+        if ($this->videoFile) {
+            $uploadPath = Yii::getAlias('@frontend/web/uploads/company-history/videos/');
+
+            if (!is_dir($uploadPath)) {
+                mkdir($uploadPath, 0777, true);
+            }
+
+            // Delete old video
+            $this->deleteOldFile($this->video);
+
+            $fileName = time() . '_' . Yii::$app->security->generateRandomString(8) . '.' . $this->videoFile->extension;
+
+            if ($this->videoFile->saveAs($uploadPath . $fileName)) {
+                $this->video = '/uploads/company-history/videos/' . $fileName;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Delete old file
+     */
+    private function deleteOldFile($filePath)
+    {
+        if ($filePath) {
+            $fullPath = Yii::getAlias('@frontend/web') . $filePath;
+            if (file_exists($fullPath)) {
+                unlink($fullPath);
+            }
+        }
+    }
+
+    /**
+     * Delete files when model is deleted
+     */
+    public function beforeDelete()
+    {
+        if (parent::beforeDelete()) {
+            $this->deleteOldFile($this->image);
+            $this->deleteOldFile($this->video);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -74,5 +179,4 @@ class CompanyHistory extends \yii\db\ActiveRecord
     {
         return $this->hasOne(AboutCompany::class, ['id' => 'company_id']);
     }
-
 }

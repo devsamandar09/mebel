@@ -8,28 +8,106 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="sponsors-form">
+<div class="sponsors-form" style="margin-top: 50px;">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title"><?= Html::encode($this->title) ?></h5>
+        </div>
+        <div class="card-body">
+            <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
-    <?php $form = ActiveForm::begin(); ?>
+            <div class="row">
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'name_uz')->textInput(['maxlength' => true]) ?>
+                </div>
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'name_uz')->textInput(['maxlength' => true]) ?>
+            <div class="row">
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'description_uz')->textarea(['rows' => 6]) ?>
+                </div>
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'description_ru')->textarea(['rows' => 6]) ?>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label class="form-label"><b>Logo yuklash</b></label>
+                    <div class="upload-box" onclick="document.getElementById('logo-input').click()">
+                        <input type="file" id="logo-input" name="Sponsors[logoFile]" accept="image/*" style="display: none;" onchange="previewImage(this)">
+                        <div id="logo-preview" class="preview-container">
+                            <?php if ($model->logo): ?>
+                                <img src="<?= $model->logo ?>" alt="Preview">
+                            <?php else: ?>
+                                <div class="upload-placeholder">
+                                    <i class="fas fa-cloud-upload-alt" style="font-size: 48px; color: #ccc;"></i>
+                                    <p>Logoni yuklash uchun bosing</p>
+                                    <span class="text-muted">PNG, JPG, JPEG, GIF (max 2MB)</span>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'description_uz')->textInput(['maxlength' => true]) ?>
+            <div class="form-group" style="margin-top: 20px;">
+                <?= Html::submitButton('Saqlash', ['class' => 'btn btn-success']) ?>
+            </div>
 
-    <?= $form->field($model, 'description_ru')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'logo')->fileInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+            <?php ActiveForm::end(); ?>
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
-
 </div>
+
+<style>
+    .upload-box {
+        border: 2px dashed #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fafafa;
+        margin-bottom: 15px;
+    }
+    .upload-box:hover {
+        border-color: #5cb85c;
+        background-color: #f0fff0;
+    }
+    .upload-placeholder {
+        color: #999;
+    }
+    .upload-placeholder p {
+        margin: 10px 0 5px;
+        font-weight: 500;
+    }
+    .preview-container {
+        width: 100%;
+    }
+    .preview-container img {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 4px;
+    }
+</style>
+
+<script>
+    function previewImage(input) {
+        const preview = document.getElementById('logo-preview');
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.innerHTML = '<img src="' + e.target.result + '" alt="Preview">';
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

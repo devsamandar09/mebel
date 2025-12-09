@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "about_company".
@@ -19,8 +20,15 @@ use Yii;
  */
 class AboutCompany extends \yii\db\ActiveRecord
 {
-
-
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => \yii\behaviors\TimestampBehavior::class,
+                // Boshqa hech narsa kerak emas, avtomatik time() ishlatadi
+            ],
+        ];
+    }
     /**
      * {@inheritdoc}
      */
