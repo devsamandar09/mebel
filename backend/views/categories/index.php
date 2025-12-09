@@ -24,27 +24,42 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'category_id',
-            'title_uz',
-            'title_ru',
-            'description_uz',
-            //'description_ru',
-            //'image',
-            //'created_at',
-            //'updated_at',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Categories $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                    'id',
+                    'category_id',
+                    'title_uz',
+                    'title_ru',
+                    'description_uz',
+
+                    [
+                            'class' => 'yii\grid\ActionColumn',
+                            'template' => '{update} {delete}',
+                            'buttons' => [
+                                    'update' => function ($url, $model) {
+                                        return Html::a('✏️', $url, [
+                                                'class' => 'btn btn-sm btn-outline-primary',
+                                        ]);
+                                    },
+                                    'delete' => function ($url, $model) {
+                                        return Html::a('🗑️', $url, [
+                                                'class' => 'btn btn-sm btn-outline-danger',
+                                                'data' => [
+                                                        'confirm' => 'Are you sure you want to delete?',
+                                                        'method' => 'post',
+                                                ],
+                                        ]);
+                                    },
+                            ],
+                            'contentOptions' => ['style' => 'white-space:nowrap;'],
+                            'urlCreator' => function ($action, Categories $model) {
+                                return Url::to([$action, 'id' => $model->id]);
+                            },
+                    ],
             ],
-        ],
     ]); ?>
 
 

@@ -24,24 +24,49 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'company_id',
-            'full_name',
-            'position',
-            'bio:ntext',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Topmanagers $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                    'id',
+                    'company_id',
+                    'full_name',
+                    'position',
+                    'bio:ntext',
+
+                    [
+                            'class' => ActionColumn::class,
+                            'template' => '{update} {delete}',
+                            'buttons' => [
+                                    'update' => function ($url, $model) {
+                                        return Html::a('✏️', $url, [
+                                                'class' => 'btn btn-sm btn-outline-primary',
+                                                'title' => 'Edit',
+                                                'aria-label' => 'Edit',
+                                                'data-pjax' => '0',
+                                        ]);
+                                    },
+                                    'delete' => function ($url, $model) {
+                                        return Html::a('🗑️', $url, [
+                                                'class' => 'btn btn-sm btn-outline-danger',
+                                                'title' => 'Delete',
+                                                'aria-label' => 'Delete',
+                                                'data' => [
+                                                        'confirm' => 'Are you sure you want to delete?',
+                                                        'method' => 'post',
+                                                ],
+                                        ]);
+                                    },
+                            ],
+                            'contentOptions' => ['style' => 'white-space:nowrap;'],
+                            'urlCreator' => function ($action, Topmanagers $model) {
+                                return Url::to([$action, 'id' => $model->id]);
+                            },
+                    ],
             ],
-        ],
     ]); ?>
+
 
 
 </div>

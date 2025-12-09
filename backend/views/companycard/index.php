@@ -24,31 +24,50 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'contacts',
-            'address',
-            'email:email',
-            'instagram_link',
-            //'facebook_link',
-            //'linkedin_link',
-            //'youtube_link',
-            //'Why_us_uz',
-            //'Why_us_ru',
-            //'regular_customers',
-            //'created_at',
-            //'updated_at',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, CompanyCard $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                    'id',
+                    'contacts',
+                    'address',
+                    'email:email',
+                    'instagram_link',
+                // 'facebook_link',
+                // 'linkedin_link',
+                // 'youtube_link',
+                // 'Why_us_uz',
+                // 'Why_us_ru',
+                // 'regular_customers',
+                // 'created_at',
+                // 'updated_at',
+
+                    [
+                            'class' => ActionColumn::class,
+                            'template' => '{update} {delete}',
+                            'buttons' => [
+                                    'update' => function ($url, $model) {
+                                        return Html::a('✏️', $url, [
+                                                'class' => 'btn btn-sm btn-outline-primary',
+                                        ]);
+                                    },
+                                    'delete' => function ($url, $model) {
+                                        return Html::a('🗑️', $url, [
+                                                'class' => 'btn btn-sm btn-outline-danger',
+                                                'data' => [
+                                                        'confirm' => 'Rostan ham o\'chirmoqchimisiz?',
+                                                        'method' => 'post',
+                                                ],
+                                        ]);
+                                    },
+                            ],
+                            'contentOptions' => ['style' => 'white-space:nowrap;'],
+                            'urlCreator' => function ($action, CompanyCard $model) {
+                                return Url::to([$action, 'id' => $model->id]);
+                            },
+                    ],
             ],
-        ],
     ]); ?>
 
 
