@@ -11,8 +11,13 @@ use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
+use yii\web\View;
 
 AppAsset::register($this);
+
+// Lightbox kutubxonasini yuklash
+$this->registerCssFile('https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css', ['position' => View::POS_HEAD]);
+$this->registerJsFile('https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js', ['depends' => [\yii\web\JqueryAsset::class]]);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

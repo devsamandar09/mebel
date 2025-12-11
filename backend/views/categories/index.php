@@ -40,6 +40,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     'title_uz',
                     'title_ru',
                     'description_uz',
+                    [
+                        'attribute' => 'image',
+                        'label' => 'Rasm',
+                        'format' => 'html',
+                        'value' => function($model) {
+                            return $model->image
+                                ? Html::img($model->image, ['style' => 'width:60px; height:60px; object-fit:cover; border-radius:5px;'])
+                                : '<span style="color:#999;">-</span>';
+                        },
+                        'headerOptions' => ['style' => 'width:80px;'],
+                    ],
 
                     [
                             'class' => ActionColumn::class,

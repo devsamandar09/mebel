@@ -156,7 +156,9 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $abouts = \common\models\AboutCompany::find()->all();
+        $histories = \common\models\CompanyHistory::find()->all();
+        return $this->render('about', compact('histories', 'abouts'));
     }
 
     /**

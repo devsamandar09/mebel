@@ -11,12 +11,12 @@ use yii\bootstrap5\ActiveForm;
 $this->title = 'mebel';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?=\frontend\widgets\Header::widget()?>
-<?=\frontend\widgets\Servises::widget()?>
 <?=\frontend\widgets\About::widget()?>
+<?=\frontend\widgets\Team::widget()?>
+
 <?=\frontend\widgets\Process::widget()?>
+<?=\frontend\widgets\Products::widget()?>
 <?=\frontend\widgets\Recentwork::widget()?>
-<?=\frontend\widgets\Testimonial::widget()?>
 <?=\frontend\widgets\Journey::widget()?>
 <?=\frontend\widgets\Blog::widget()?>
 <?=\frontend\widgets\Footer::widget()?>

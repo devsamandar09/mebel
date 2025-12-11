@@ -4,9 +4,11 @@ namespace backend\controllers;
 
 use common\models\AboutCompany;
 use common\models\AboutcompanySearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * AboutcompanyController implements the CRUD actions for AboutCompany model.
@@ -70,8 +72,21 @@ class AboutcompanyController extends Controller
         $model = new AboutCompany();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+
+                // Rasmni olish
+                $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+                // Rasmni yuklash
+                $model->uploadImage();
+
+                // Null qilish
+                $model->imageFile = null;
+
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success', 'Kompaniya muvaffaqiyatli qo\'shildi!');
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
             }
         } else {
             $model->loadDefaultValues();
@@ -93,8 +108,23 @@ class AboutcompanyController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post())) {
+
+                // Rasmni olish
+                $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+                // Rasmni yuklash
+                $model->uploadImage();
+
+                // Null qilish
+                $model->imageFile = null;
+
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success', 'Kompaniya muvaffaqiyatli yangilandi!');
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+            }
         }
 
         return $this->render('update', [
@@ -112,7 +142,7 @@ class AboutcompanyController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        Yii::$app->session->setFlash('success', 'Kompaniya muvaffaqiyatli o\'chirildi!');
         return $this->redirect(['index']);
     }
 

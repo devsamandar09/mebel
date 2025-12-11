@@ -8,6 +8,7 @@ class Servises extends Widget
 {
     public function run()
     {
+
         return $this->render('servises');
     }
 }

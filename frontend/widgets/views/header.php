@@ -1,11 +1,11 @@
-<div class="banner_outer">
+<div class="banner_outer" style="padding-bottom: 150px">
     <figure class="light-image mb-0">
     </figure>
     <header class="header">
         <div class="main-header">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <img src="/images/IMG_0050.png" alt="" class="img-fluid" width="250px"; height="250px">
+                    <img src="/images/lgo.png" alt="" class="img-fluid" width="250px"; height="250px">
 
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -13,13 +13,15 @@
                         <span class="navbar-toggler-icon"></span>
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
+
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
                                 <a class="nav-link" href="index-2.html"><?= Yii::t('app', 'menu1') ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html"><?= Yii::t('app', 'menu2') ?></a>
+                                <a class="nav-link" href="/site/about"><?= Yii::t('app', 'menu2') ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="service.html"><?= Yii::t('app', 'menu3') ?></a>
@@ -56,17 +58,24 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="nav-space nav-item">
-                                <div class="contact-button">
-                                    <a class="contact_us text-decoration-none" href="contact.html">Contact Us</a>
-                                    <a class="image-button text-decoration-none" href="contact.html">
-                                        <figure class="arrow mb-0">
-                                            <img src="/images/arrow.png" alt="" class="img-fluid">
-                                        </figure>
-                                    </a>
+
+                            <li class="nav-space nav-item dropdown">
+                                <a class="nav-link dropdown-toggle dropdown-color navbar-text-color" href="#" id="navbarDropdownLanguage" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <?php
+                                    $languages = Yii::$app->params['languages'];
+                                    $currentLang = substr(Yii::$app->language, 0, 2);
+                                    echo $languages[$currentLang] ?? 'Language';
+                                    ?>
+                                </a>
+                                <div class="dropdown-menu drop-down-content">
+                                    <ul class="list-unstyled drop-down-pages">
+                                        <?= \frontend\widgets\LanguageSwitcher::widget() ?>
+                                    </ul>
                                 </div>
                             </li>
                         </ul>
+
                     </div>
                 </nav>
             </div>

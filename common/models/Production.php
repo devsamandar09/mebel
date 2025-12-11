@@ -59,6 +59,8 @@ class Production extends \yii\db\ActiveRecord
         return [
             [['video', 'image', 'created_at', 'updated_at'], 'default', 'value' => null],
             [['company_id'], 'required'],
+            [['title_uz', 'title_ru'], 'string', 'max' => 255],
+            [['description_uz', 'description_ru'], 'string'],
             [['company_id'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['video', 'image'], 'string', 'max' => 255],
@@ -78,6 +80,10 @@ class Production extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'company_id' => 'Company ID',
+            'title_uz' => 'Title Uz',
+            'title_ru' => 'Title Ru',
+            'description_uz' => 'Description Uz',
+            'description_ru' => 'Description Ru',
             'video' => 'Video',
             'image' => 'Image',
             'imageFile' => 'Rasm yuklash',

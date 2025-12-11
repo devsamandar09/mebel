@@ -40,11 +40,38 @@ $this->params['breadcrumbs'][] = $this->title;
                     'title_uz',
                     'title_ru',
                     'description_uz',
-                // 'description_ru',
-                // 'image',
-                // 'video',
-                // 'created_at',
-                // 'updated_at',
+                    [
+                        'label' => 'Rasmlar',
+                        'format' => 'html',
+                        'value' => function($model) {
+                            $images = [];
+                            for($i = 1; $i <= 5; $i++) {
+                                $field = $i === 1 ? 'image' : "image$i";
+                                if (!empty($model->$field)) {
+                                    $images[] = Html::img($model->$field, ['style' => 'width:50px; height:50px; object-fit:cover; border-radius:3px; margin:2px;']);
+                                }
+                            }
+                            return $images ? implode('', $images) : '-';
+                        },
+                        'headerOptions' => ['style' => 'width:280px;'],
+                    ],
+                    [
+                        'label' => 'Videolar',
+                        'format' => 'html',
+                        'value' => function($model) {
+                            $videos = [];
+                            for($i = 1; $i <= 5; $i++) {
+                                $field = $i === 1 ? 'video' : "video$i";
+                                if (!empty($model->$field)) {
+                                    $videos[] = '<div style="position:relative; width:50px; height:50px; background:#000; border-radius:3px; display:inline-flex; align-items:center; justify-content:center; margin:2px;">'
+                                        . '<i class="glyphicon glyphicon-play-circle" style="color:#fff; font-size:20px;"></i>'
+                                        . '</div>';
+                                }
+                            }
+                            return $videos ? implode('', $videos) : '-';
+                        },
+                        'headerOptions' => ['style' => 'width:280px;'],
+                    ],
 
                     [
                             'class' => ActionColumn::class,

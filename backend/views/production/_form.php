@@ -21,6 +21,22 @@ use yii\widgets\ActiveForm;
                     <?= $form->field($model, 'company_id')->textInput() ?>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'title_uz')->textInput(['maxlength' => true]) ?>
+                </div>
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'title_ru')->textInput(['maxlength' => true]) ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'description_uz')->textarea(['rows' => 6]) ?>
+                </div>
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'description_ru')->textarea(['rows' => 6]) ?>
+                </div>
+            </div>
 
             <div class="row">
                 <div class="col-lg-6">

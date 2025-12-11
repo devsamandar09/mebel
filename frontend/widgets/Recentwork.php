@@ -7,6 +7,7 @@ use yii\base\Widget;
 class Recentwork extends Widget
 {
     public function run(){
-        return $this->render('recentwork');
+        $productions = \common\models\Production::find()->all();
+        return $this->render('recentwork' , ['productions' => $productions]);
     }
 }

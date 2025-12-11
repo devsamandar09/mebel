@@ -54,7 +54,7 @@ class Categories extends \yii\db\ActiveRecord
     {
         return [
             [['description_uz', 'description_ru', 'image', 'created_at', 'updated_at'], 'default', 'value' => null],
-            [['category_id', 'title_uz', 'title_ru'], 'required'],
+            [[ 'title_uz', 'title_ru'], 'required'],
             [['category_id'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['title_uz', 'title_ru', 'description_uz', 'description_ru', 'image'], 'string', 'max' => 255],

@@ -9,6 +9,7 @@ class About extends Widget
     public function run()
     {
         $abouts = \common\models\AboutCompany::find()->all();
-        return $this->render('about', compact('abouts'));
+        $histories = \common\models\CompanyHistory::find()->all();
+        return $this->render('about', compact('abouts', 'histories'));
     }
 }

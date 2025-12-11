@@ -19,11 +19,16 @@ class LanguageSwitcher extends Widget
                 Yii::$app->request->get(),
                 ['language' => $code]
             );
-            $items[] = Html::a($name, $url, [
-                'class' => $code === substr($current, 0, 2) ? 'active' : ''
-            ]);
+
+            $linkClass = 'dropdown-item nav-link';
+            if ($code === substr($current, 0, 2)) {
+                $linkClass .= ' active';
+            }
+
+            $link = Html::a($name, $url, ['class' => $linkClass]);
+            $items[] = Html::tag('li', $link, ['class' => 'nav-item']);
         }
 
-        return Html::tag('div', implode(' | ', $items), ['class' => 'language-switcher']);
+        return implode('', $items);
     }
 }

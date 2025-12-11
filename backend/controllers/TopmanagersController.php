@@ -4,9 +4,11 @@ namespace backend\controllers;
 
 use common\models\Topmanagers;
 use common\models\TopmanagersSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * TopmanagersController implements the CRUD actions for Topmanagers model.
@@ -70,8 +72,21 @@ class TopmanagersController extends Controller
         $model = new Topmanagers();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+
+                // Rasmni olish
+                $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+                // Rasmni yuklash
+                $model->uploadImage();
+
+                // Null qilish
+                $model->imageFile = null;
+
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success', 'Menejer muvaffaqiyatli qo\'shildi!');
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
             }
         } else {
             $model->loadDefaultValues();
@@ -93,8 +108,23 @@ class TopmanagersController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post())) {
+
+                // Rasmni olish
+                $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+                // Rasmni yuklash
+                $model->uploadImage();
+
+                // Null qilish
+                $model->imageFile = null;
+
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('success', 'Menejer muvaffaqiyatli yangilandi!');
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+            }
         }
 
         return $this->render('update', [
@@ -112,7 +142,7 @@ class TopmanagersController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        Yii::$app->session->setFlash('success', 'Menejer muvaffaqiyatli o\'chirildi!');
         return $this->redirect(['index']);
     }
 
